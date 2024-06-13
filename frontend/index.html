@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body style="background-color: rgb(233, 245, 247);">
+    <div class="container col-11 col-sm-10 col-md-8 col-lg-6">
+        <h1 class="text-center py-4 fw-bold">Booking Prediction Form</h1>
+        <div class="card p-3 mb-3">
+            <form onsubmit="handleSubmit(event)">
+                <label class="form-label mb-1">
+                    Booking Currency:
+                </label>
+                <select class="form-control mb-2" name="booking_currency" required>
+                    <option value="1">Rupiah</option>
+                    <option value="2">USD</option>
+                    <option value="3">Euro</option>
+                    <option value="4">AUD</option>
+                </select>
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label mb-1">
+                            Bedroom:
+                        </label>
+                        <input class="form-control" type="number" name="bedroom" required>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label mb-1">
+                            Bathroom:
+                        </label>
+                        <input class="form-control" type="number" name="bathroom" required>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label mb-1">
+                            Beds:
+                        </label>
+                        <input class="form-control" type="number" name="beds" required>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label mb-1">
+                            Capacity:
+                        </label>
+                        <input class="form-control" type="number" name="capacity" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label">
+                            WiFi
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="wifi" value="1">
+                        <label class="form-check-label">Ada</label>
+                        <input type="hidden" name="wifi" value="0">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label">
+                            TV
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="tv" value="1">
+                        <label class="form-check-label">Ada</label>
+                        <input type="hidden" name="tv" value="0">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label">
+                            Cable TV
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="cable_tv" value="1">
+                        <label class="form-check-label">Ada</label>
+                        <input type="hidden" name="cable_tv" value="0">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label">
+                            AC
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="ac" value="1">
+                        <label class="form-check-label">Ada</label>
+                        <input type="hidden" name="ac" value="0">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label">
+                            Workspace
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="workspace" value="1">
+                        <label class="form-check-label">Ada</label>
+                        <input type="hidden" name="workspace" value="0">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label">
+                            Pool
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="pool" value="1">
+                        <label class="form-check-label">Ada</label>
+                        <input type="hidden" name="pool" value="0">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label">
+                            Parking
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="parking" value="1">
+                        <label class="form-check-label">Ada</label>
+                        <input type="hidden" name="parking" value="0">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label">
+                            Gym
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="gym" value="1">
+                        <label class="form-check-label">Ada</label>
+                        <input type="hidden" name="gym" value="0">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <label class="form-label">
+                        Kitchen
+                    </label>
+                    <input class="form-check-input" type="checkbox" name="kitchen" value="1">
+                    <label class="form-check-label">Ada</label>
+                    <input type="hidden" name="kitchen" value="0">
+                </div>
+
+
+
+                <label class="form-label mb-1">
+                    Area Name:
+                </label>
+                <select class="form-control mb-2" name="area_name" id="area_name" required>
+                    <option value="0">Baciro</option>
+                    <option value="1">Balangan</option>
+                    <option value="2">Bandung</option>
+                    <option value="3">Banguntapan</option>
+                    <option value="4">Bingin</option>
+                    <option value="5">Canggu</option>
+                    <option value="6">Cemagi</option>
+                    <option value="7">Gili Trawangan</option>
+                    <option value="8">Jakarta</option>
+                    <option value="9">Jimbaran</option>
+                    <option value="10">Kuta</option>
+                    <option value="11">Maguwoharjo</option>
+                    <option value="12">Ngupasan</option>
+                    <option value="13">Nusa Dua</option>
+                    <option value="14">Nusa Penida</option>
+                    <option value="15">Padang Padang</option>
+                    <option value="16">Penang</option>
+                    <option value="17">Seminyak</option>
+                    <option value="18">Sinduharjo</option>
+                    <option value="19">Tamantirto</option>
+                    <option value="20">Ubud</option>
+                    <option value="21">Uluwatu</option>
+                    <option value="22">Undefined</option>
+                    <option value="23">Ungasan</option>
+                    <option value="24">Yogyakarta</option>
+                    <option value="25">Lainnya</option>
+                </select>
+
+
+                <label class="form-label mb-1">
+                    Area Distance to Airport:
+                </label>
+                <input class="form-control mb-2" type="number" name="area_distance_to_airport" required>
+                <label class="form-label mb-1">
+                    Airport Pickup Price (IDR):
+                </label>
+                <input class="form-control mb-2" type="number" name="airport_pickup_price_idr" required>
+                <label class="form-label mb-1">
+                    Booking Check-in Date:
+                </label>
+                <input class="form-control mb-2" type="date" name="booking_check_in" required>
+
+                <label class="form-label mb-1">
+                    Booking Check-out Date:
+                </label>
+                <input class="form-control mb-2" type="date" name="booking_check_out" required>
+                <button class="btn btn-primary mt-3 mx-auto d-block" type="submit">Predict</button>
+            </form>
+        </div>
+        <div class="card p-3 mb-3">
+            <h2>Result</h2>
+            <p class="form-control" id="result" readonly></pvisua>
+        </div>
+    </div>
+
+    <script>
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const jsonData = {};
+
+            formData.forEach((value, key) => {
+                if (key === 'booking_check_in' || key === 'booking_check_out') {
+                    const date = new Date(value);
+                    jsonData[`${key}_date`] = date.getDate();
+                    jsonData[`${key}_month`] = date.getMonth() + 1;
+                    jsonData[`${key}_year`] = date.getFullYear();
+                } else if (['wifi', 'tv', 'cable_tv', 'ac', 'workspace', 'pool', 'parking', 'gym', 'kitchen'].includes(key)) {
+                    jsonData[key] = form.querySelector(`input[name="${key}"]`).checked ? 1 : 0;
+                } else {
+                    jsonData[key] = parseInt(value);
+                }
+            });
+
+            const checkInDate = new Date(formData.get('booking_check_in'));
+            const checkOutDate = new Date(formData.get('booking_check_out'));
+            const lengthOfStay = (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24);
+
+            jsonData['length_of_stay'] = lengthOfStay;
+
+            const response = await fetch('https://capstone-third.et.r.appspot.com/predict2', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify([jsonData]),
+            });
+
+            const result = await response.json();
+            if (result.status) {
+                const formatter = new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                });
+                const formattedResult = formatter.format(result.data.booking_in_idr);
+                document.getElementById('result').innerText =` ${formattedResult} / Malam`;
+            } else {
+                document.getElementById('result').innerText = `Error: ${result.message}`;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

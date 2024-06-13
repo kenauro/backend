@@ -1,2 +1,4 @@
-runtime: nodejs14
-end: standard
+service: backend
+
+runtime: nodejs18
+env: standard
